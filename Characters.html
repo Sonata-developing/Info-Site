@@ -1,0 +1,313 @@
+<DOCTYPE html>
+<head>
+<title>Персонажі</title>
+<style>
+    .app{
+            height: 100px;
+        }
+body{
+background-image:url("Characters bg.jpg");
+background-size: cover;
+background-position: center;
+        }
+footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px; 
+            background-color: rgba(0, 0, 0, 0.6); 
+            color: #ffffff;
+            font-size: 14px;
+            letter-spacing: 1px; 
+            border-top: 1px solid rgba(255, 149, 0, 0.3); 
+        }
+
+        footer span {
+            color: #ff9500; 
+            font-weight: bold;
+        }
+		  header h1 {
+            color: #ede72f; 
+            font-size: 55px; 
+            text-align: center; 
+			 padding-top: 60px; 
+            text-shadow: 0px 0px 15px #000000, 2px 2px 5px #000000; 
+			background-color:rgba(222, 183, 11,0.8);
+			padding: 20px 40px;
+			margin:50px auto 0 auto;
+        }
+		.characters{
+		background-color:rgba(71, 16, 181, 0.5);
+		max-width:400px;
+		color:#6b30e3;
+		text-shadow: 0px 0px 15px #000000, 2px 2px 5px #000000;}
+		
+		.navbar {
+            background-color: rgba(163, 15, 2, 0.5); 
+            padding: 10px 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+            margin-top: 20px; 
+			margin-bottom:40px;
+        }
+           .navbar ul {
+            list-style-type: none; 
+            margin: 0;
+            padding: 0;
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+        }
+
+        .navbar a {
+            color: #eb190e;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif; 
+            transition: 0.3s; 
+			text-shadow:0px 0px 15px #000000, 2px 2px 5px #000000;
+        }
+
+        .navbar a:hover {
+            color: #ffe6f2; 
+            text-shadow: 0 0 10px #ffffff; 
+        }
+		.character-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.75);
+            border: 2px solid #ff9500;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .char-list {
+            display: grid;
+            grid-template-columns: repeat(2, 70px); 
+            gap: 15px;
+            align-content: start;
+        }
+
+        .char-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            border: 2px solid #ff9500;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .char-avatar:hover, .char-avatar.active {
+            opacity: 1;
+            transform: scale(1.08); 
+
+            border-color: #ffffff;
+            box-shadow: 0 0 10px #ff9500;
+        }
+
+        .char-display {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .char-big-img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ff9500;
+        }
+
+        .char-info h2 {
+            margin-top: 0;
+            color: #ff9500;
+            font-size: 28px;
+        }
+
+        .char-info p {
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+		
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #ff0055; 
+    border-color: #ff0055;
+}
+
+.char-avatar.hide {
+    display: none !important;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Characters</h1>
+</header>
+<nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sonatassoficial@gmail.com&su=I want to help with the project, here is what I can do:" target="_blank">Contact Us</a></li>
+            <li><a href="Sponsors.html">Sponsors</a></li>
+            <li><a href="Fanarts.html">Artwork</a></li>
+        </ul>
+    </nav>
+	<div class="filter-buttons">
+    <button class="filter-btn active" onclick="filterChars('all')">All</button>
+    <button class="filter-btn" onclick="filterChars('actors')">Grandious</button>
+    <button class="filter-btn" onclick="filterChars('sinners')">Cult of 7 Deadly Sins</button>
+</div>
+<div class="character-gallery">
+    <div class="char-list">
+        <img src="MimiBg.jpg" 
+             class="char-avatar" 
+			 data-category="actors"
+             onclick="selectChar('Miriam Alice Krite', 'Miriam Alice Krite, better known to her friends as Mimi, is a 16-year-old actress in Grandious and one of the main characters in the Grand Circus (an upcoming animated series). She is the last `lost child` to be found by the Great Magician at the age of 10. Miriam does not like to talk about her past, especially about her mother. She is a very sociable and pleasant person with whom people can be happy.', 'MimiBg.jpg', this)">
+
+			  <img src="EmAmBg.jpg" 
+             class="char-avatar"
+			 data-category="actors"
+             onclick="selectChar('Amilia and Emily Zurkirb', '15-year-old twin actresses from Grandious and two of the protagonists of Grand Circus (an upcoming animated series). They are the fourth and fifth `lost children` found by the Great Magician when they were 8 years old. Although they have different personalities (Emily is always sad and quiet, and Amilia is always cheerful and loud), they are sisters who support each other in difficult times and complement each other.', 'EmAmBg.jpg', this)">
+			 
+			 <img src="AndrewBg.jpg" 
+             class="char-avatar" 
+			 data-category="actors"
+             onclick="selectChar('Andrew Borker', 'Andrew is a 17-year-old actor from Grandious and one of the protagonists of Grand Circus (an upcoming animated series). He is the third `lost child` found by the Great Magician when the boy was 9. Although he is a `bad boy` type who will do everyone harm, perhaps there is still a little humanity and love left in him.', 'AndrewBg.jpg', this)">
+			 
+			  <img src="SamBg.jpg" 
+             class="char-avatar" 
+			 data-category="actors"
+             onclick="selectChar('Samuella Angelica Therber', 'Sam, a 15-year-old actress from Grandious and one of the protagonists of Grand Circus (an upcoming animated series). She is the second `lost child` found by the Magician, although she still does not trust him. Sam does not like talking about rich people because it triggers her to her past family, which she still hates. Sam`s parents taught her not to show emotions. Sam is cold and even a little rude to strangers, but will slowly open up to people she is comfortable with.', 'SamBg.jpg', this)">
+   
+              <img src="AckBg.jpg" 
+             class="char-avatar" 
+			 data-category="actors"
+             onclick="selectChar('Ackrold Giru', 'Ack is a 17-year-old actor from Grandious and one of the protagonists of the Grand Circus (an upcoming animated series). He is the first `lost child` found by the Great Magician when the boy was 7. He is a friendly and energetic boy who never has a problem making friends with strangers in 3 minutes.', 'AckBg.jpg', this)">
+			 
+ <img src="TBM.jpg" 
+             class="char-avatar" 
+			 data-category="actors"
+             onclick="selectChar('Great Magician', 'The Magician is the 45-year-old showrunner of Grandious and one of the protagonists of the Grand Circus (an upcoming animated series). He is the same one who saved children who were running away from a harsh life or beliefs. Although he may seem strange and sometimes act like a child, he is quite loving and is considered a `father` to everyone in the circus.', 'TBM.jpg', this)">
+
+ <img src="Miss Marry.jpg" 
+             class="char-avatar" 
+			 data-category="sinners"
+             onclick="selectChar('?', 'The representative of the mortal sin of lust and unbearable desire.', 'Miss Marry.jpg', this)">
+
+ <img src="Arina.jpg" 
+             class="char-avatar" 
+			 data-category="sinners"
+             onclick="selectChar('??', 'The representative of the mortal sin of anger and hatred towards all.', 'Arina.jpg', this)">
+			 
+			  <img src="Lucia.jpg" 
+             class="char-avatar" 
+			 data-category="sinners"
+             onclick="selectChar('???','Representative of the mortal sin of greed and the unbridled desire to have more wealth.', 'Lucia.jpg', this)">
+			 
+			 <img src="Melissia.jpg" 
+             class="char-avatar" 
+			 data-category="sinners"
+             onclick="selectChar('????', 'The representative of the mortal sin of envy and the unbridled desire to have everything you have.', 'Melissia.jpg', this)">
+			 
+			 <img src="Elizabeth&Gustaf.jpg" 
+             class="char-avatar" 
+			 data-category="sinners"
+             onclick="selectChar('?????', 'Representatives of the deadly sins of pride and sloth, married; mortal leaders of the cult of the 7 Deadly Sins.', 'Elizabeth&Gustaf.jpg', this)">
+			 
+			 <img src="Lola.jpg" 
+             class="char-avatar" 
+			 data-category="sinners"
+             onclick="selectChar('??????', 'The representative of the mortal sin of gluttony.', 'Lola.jpg', this)">
+   </div>
+
+    <div class="char-display">
+        <img id="char-img" class="char-big-img" src="MimiBg.jpg" alt="Character">
+        <div class="char-info">
+            <h2 id="char-name">Miriam Alice Krite</h2>
+            <p id="char-bio">Miriam Alice Krite, better known to her friends as Mimi, is a 16-year-old actress in Grandious and one of the main characters in the Grand Circus (an upcoming animated series). She is the last `lost child` to be found by the Great Magician at the age of 10. Miriam does not like to talk about her past, especially about her mother. She is a very sociable and pleasant person with whom people can be happy.</p>
+        </div>
+    </div>
+
+</div>
+<footer><footer>
+    <a href="https://www.youtube.com/channel/UCpR4dISsXbkjq3_WoAJe_vA"><img src="YouTube.jpg" class="app"></a>
+    <a href="https://www.instagram.com/sonatassofficial?igsh=c3dpOXNiMDE3bmlo"><img src="Instagram.jpg" class="app"></a>
+	<a href="https://t.me/SonataSocial"><img src="Telegram.jpg" class="app"></a>
+    <a href="https://www.patreon.com/SonataS?utm_campaign=creatorshare_fan"><img src="Patreon.jpg" class="app"></a>
+    <a href="https://www.tiktok.com/@sonatas.pesik?_r=1&_t=ZS-9852CvKjm2X"><img src="TikTok.jpg" class="app"></a>
+        <p>&copy; 2026 <span>Sonata</span>. All rights reserved.</p>
+    </footer></footer>
+	<script>
+    function selectChar(name, bio, imgSrc, element, customAlert) {
+    document.getElementById('char-name').textContent = name;
+    document.getElementById('char-bio').textContent = bio;
+    document.getElementById('char-img').src = imgSrc;
+
+    var avatars = document.querySelectorAll('.char-avatar');
+    avatars.forEach(function(avatar) {
+        avatar.classList.remove('active');
+    });
+
+    element.classList.add('active');
+
+     if (customAlert) {
+        alert(customAlert);
+    }
+}
+    var secretWord = 'esmerald'; 
+    var typedText = '';
+    document.addEventListener('keydown', function(event) {
+     
+        typedText += event.key.toLowerCase();
+
+        if (typedText.length > secretWord.length) {
+            typedText = typedText.substring(typedText.length - secretWord.length);
+        }
+
+        if (typedText === secretWord) {
+            window.location.href = 'Sin.html'; 
+        }
+    });
+	function filterChars(category) {
+    var avatars = document.querySelectorAll('.char-avatar');
+
+    avatars.forEach(function(avatar) {
+        
+        if (category === 'all' || avatar.getAttribute('data-category') === category) {
+            avatar.classList.remove('hide'); 
+        } else {
+            avatar.classList.add('hide');   
+        }
+    });
+
+    var buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+}
+</script>
+</script>
+</body>
+</html>
